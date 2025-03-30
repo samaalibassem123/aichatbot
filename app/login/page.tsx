@@ -3,7 +3,7 @@ import React from "react";
 
 export default function page() {
   return (
-    <div className="flex items-center justify-center  h-svh">
+    <div className="flex p-5 items-center justify-center  h-svh">
       <LoginFrom />
     </div>
   );

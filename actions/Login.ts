@@ -1,6 +1,9 @@
 "use server"
 import { LoginFormSchema } from "@/lib/auth/definition";
 import { createClient } from "@/utils/supabase/server";
+import { revalidatePath } from "next/cache";
+
+import { redirect } from 'next/navigation';
 
 
 
@@ -24,8 +27,12 @@ export async function login(state: any, formData: FormData ){
         if(error){
             return {Autherror:"Email or password Incorrect"}
         }
+        revalidatePath('/',"layout")
+        redirect('/')
         
     }else{
         return {errors:ValidateForm.error.flatten().fieldErrors}
     }
 }
+
+

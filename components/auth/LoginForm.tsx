@@ -1,6 +1,6 @@
 "use client";
 import { Label } from "@radix-ui/react-label";
-import React, { ReactNode, useActionState, useRef, useState } from "react";
+import React, { useActionState, useRef } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { login } from "@/actions/Login";
@@ -35,7 +35,7 @@ export default function LoginForm() {
   return (
     <form
       action={action}
-      className="w-[400px] shadow-md p-5 space-y-5 rounded-md drop-shadow-md"
+      className="w-[400px] shadow-md p-5 space-y-5 rounded-md inset-shadow-xs"
     >
       <legend className="text-2xl font-bold text-center">Login</legend>
       {state?.Autherror && (
