@@ -4,6 +4,7 @@ import React, { useActionState, useRef } from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { login } from "@/actions/Login";
+import Link from "next/link";
 
 export default function LoginForm() {
   const [state, action, pending] = useActionState(login, undefined);
@@ -35,7 +36,7 @@ export default function LoginForm() {
   return (
     <form
       action={action}
-      className="w-[400px] shadow-md p-5 space-y-5 rounded-md inset-shadow-xs"
+      className="w-[400px] shadow-md p-5 space-y-5 rounded-md inset-shadow-xs flex flex-col"
     >
       <legend className="text-2xl font-bold text-center">Login</legend>
       {state?.Autherror && (
@@ -68,11 +69,14 @@ export default function LoginForm() {
           )
         }
       </div>
-      <div className="text-center">
-        <Button disabled={pending} className=" cursor-pointer" type="submit">
-          Login
-        </Button>
-      </div>
+
+      <Button disabled={pending} className=" cursor-pointer" type="submit">
+        Login
+      </Button>
+
+      <Link href={"/register"} className="text-sm text-gray-500 underline">
+        Create an account
+      </Link>
     </form>
   );
 }
