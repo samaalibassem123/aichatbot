@@ -68,8 +68,6 @@ export default function ChatUi({
             "send"
           )}
         </Button>
-
-        <SaveConv chat={messages} />
       </form>
     </div>
   );
