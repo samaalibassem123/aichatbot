@@ -8,7 +8,7 @@ import React from "react";
 export default async function page({
   params,
 }: {
-  params: { id: string | null };
+  params: { id: string | undefined | Promise<any> };
 }) {
   const { id } = await params;
   const supabese = await createClient();
