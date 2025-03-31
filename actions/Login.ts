@@ -24,7 +24,7 @@ export async function login(state: any, formData: FormData ){
         const supabase = await createClient();
         const {data, error} = await supabase.auth.signInWithPassword(Data)
         if(error){
-            return {Autherror:"Email or password Incorrect"}
+            return {Autherror:"Password Incorrect or mail Does not exsit"}
         }
         revalidatePath('/',"layout")
         redirect('/user/'+data.user.id);

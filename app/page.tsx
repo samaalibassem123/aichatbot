@@ -1,5 +1,7 @@
+import { Button } from "@/components/ui/button";
 import { createClient } from "@/utils/supabase/server";
 import Image from "next/image";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
@@ -14,6 +16,13 @@ export default async function Home() {
   }
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]"></div>
+    <main className="flex flex-col gap-2.5 items-center justify-center w-full h-svh">
+      <Button asChild>
+        <Link href={"/login"}>Login</Link>
+      </Button>
+      <Button asChild>
+        <Link href={"/register"}>SignUp</Link>
+      </Button>
+    </main>
   );
 }

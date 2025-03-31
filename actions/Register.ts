@@ -11,8 +11,6 @@ const ChekuserExist = async (supabase:any, email:string)=>{
 }
 
 
-
-
 export async function register(state:any, formData:FormData){
 
     const ValidFields = RegisterForm.safeParse(
@@ -38,6 +36,7 @@ export async function register(state:any, formData:FormData){
         if(userExist){ 
             return {UserAlreadyExistMessage:'this user is already exist try another mail'}
         }else{
+            //Sign up the user to the auth table
             const {data, error} = await supabase.auth.signUp(Data);
             //SignUp ERROR
             if(error){
@@ -46,7 +45,8 @@ export async function register(state:any, formData:FormData){
             //Insert the user data in the the users table
             const UsersData =[ {
                 email: formData.get('email') as string,
-                username : formData.get('username') as string
+                username : formData.get('username') as string,
+                user_auth_id: data.user?.id as string,
             }]
 
             const {error:dbError} = await supabase.from('users').insert(UsersData)
