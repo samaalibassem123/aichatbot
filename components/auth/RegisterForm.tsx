@@ -18,6 +18,14 @@ export default function RegisterForm() {
       <div className="text-center">
         <legend className="text-2xl font-bold">Register</legend>
         <span className="text-gray-500 text-sm">Create new account</span>
+        {state?.CheckyouMailMessage && (
+          <p className="text-sm text-blue-400">{state.CheckyouMailMessage}</p>
+        )}
+        {state?.UserAlreadyExistMessage && (
+          <p className="text-sm text-red-400">
+            {state.UserAlreadyExistMessage}
+          </p>
+        )}
       </div>
       {fields.map((field, index) => (
         <div key={index} className="flex flex-col gap-2">
