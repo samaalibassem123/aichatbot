@@ -26,6 +26,9 @@ export default function RegisterForm() {
             {state.UserAlreadyExistMessage}
           </p>
         )}
+        {state?.ServerError && (
+          <p className="text-sm text-red-400">{state.ServerError}</p>
+        )}
       </div>
       {fields.map((field, index) => (
         <div key={index} className="flex flex-col gap-2">

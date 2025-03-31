@@ -3,9 +3,11 @@ import { RegisterForm } from "@/lib/auth/definition";
 import { createClient } from "@/utils/supabase/server";
 
 
+
 const ChekuserExist = async (supabase:any, email:string)=>{
     const {data, error} = await supabase.from('users').select('email').eq('email',email);
-    return data ? true : false;
+    const tabData = data as Array<any>;
+    return tabData.length === 0 ? false : true;
 }
 
 
@@ -42,17 +44,15 @@ export async function register(state:any, formData:FormData){
                 return {ServerError:'Try again Error in the server'}
             }
             //Insert the user data in the the users table
-            const UsersData = {
-                id:data.user?.id as string,
+            const UsersData =[ {
                 email: formData.get('email') as string,
                 username : formData.get('username') as string
-            }
-            try{
-                await supabase.from('users').insert(UsersData)
-            }catch(error){
+            }]
 
+            const {error:dbError} = await supabase.from('users').insert(UsersData)
+            if(dbError){
+                return {ServerError:'Try another time there is an Error in the server'}
             }
-            
             return {CheckyouMailMessage:'Check your mail for the confirmation link !'};
 
         }   
