@@ -1,3 +1,4 @@
+import { FieldType } from "./types";
 
   
 export const fields:FieldType = [
