@@ -8,6 +8,7 @@ import { ScrollArea } from "../ui/scroll-area";
 import { AvatarIcon } from "./AvatarIcon";
 
 import { ClipLoader } from "react-spinners";
+import SaveCon from "./SaveCon";
 
 export default function ChatUi({
   username,
@@ -71,6 +72,7 @@ export default function ChatUi({
             "send"
           )}
         </Button>
+        <SaveCon />
       </form>
     </div>
   );

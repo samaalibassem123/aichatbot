@@ -10,7 +10,7 @@ export const LoginFormSchema = z.object(
 //extend so we  can add only cpassword and dont repaeat writing mail and password
 export const RegisterForm = LoginFormSchema.extend(
     {
-        username: z.string().trim().min(3, {message:"* username mast contains at leat 3 letters"}),
+        username: z.string().trim().min(3, {message:"* username must contains at leat 3 letters"}),
         Cpassword: z.string().trim().min(6, {message:"* Be at least 6 characters long"}).regex(/[a-zA-Z]/, {message:"* Contain at least one letter."}).regex(/[0-9]/,{message:"* Contain at least one Number ."}).regex(/[^a-zA-Z0-9]/, {message:"* contains at least one speacial character ."}),
     }
 ).refine((data)=>data.Cpassword === data.password, {message:"Password do not match", path:["Cpassword"]}); // refine and path so we can attach the error to  cpassword fiels
