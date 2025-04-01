@@ -4,7 +4,7 @@ import { google } from '@ai-sdk/google';
 import { streamText } from 'ai';
 
 
-export const maxDuration = 100;
+export const maxDuration = 60;
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
