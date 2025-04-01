@@ -25,8 +25,8 @@ export default function ChatUi({
     ScrollBottom();
   }, [messages]);
   return (
-    <div className="md:w-[80%] md:h-[500px] w-full h-full inset-shadow-2xs shadow-md rounded-md p-2 ">
-      <ScrollArea className="h-[90%] md:p-0 pt-20">
+    <div className=" h-full w-full inset-shadow-2xs shadow-md rounded-md p-2 overflow-hidden">
+      <ScrollArea className="h-[90%] flex-grow">
         {messages.map((message) => (
           <div key={message.id} className="flex gap-2 items-end mb-2.5">
             {message.role === "user" ? (
@@ -37,7 +37,7 @@ export default function ChatUi({
                     {username}:
                   </span>
                 </div>
-                <pre className="text-pretty p-1.5 font-mono">
+                <pre className=" text-wrap whitespace-pre-wrap p-1.5 font-mono">
                   {message.content}
                 </pre>
               </div>
@@ -49,7 +49,7 @@ export default function ChatUi({
                     ChatBot:
                   </span>
                 </div>
-                <pre className="text-pretty p-1.5 font-mono">
+                <pre className="text-wrap whitespace-pre-wrap p-1.5 font-mono">
                   {message.content}
                 </pre>
               </div>
@@ -59,7 +59,10 @@ export default function ChatUi({
         <div ref={MessageEndView} />
       </ScrollArea>
 
-      <form onSubmit={handleSubmit} className="flex items-center gap-2 p-2">
+      <form
+        onSubmit={handleSubmit}
+        className="flex items-center gap-2 p-2 sticky bottom-0 backdrop-blur-md "
+      >
         <Input name="prompt" value={input} onChange={handleInputChange} />
         <Button type="submit" disabled={status === "submitted" ? true : false}>
           {status === "submitted" ? (

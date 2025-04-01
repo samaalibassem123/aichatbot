@@ -33,9 +33,9 @@ export default async function page({
   const User: Array<UserSchema> = data as Array<UserSchema>;
 
   return (
-    <main className="md:block flex flex-col">
+    <main className="md:block flex flex-col h-svh overflow-hidden">
       <Header username={User[0]?.username} />
-      <div className="w-full h-svh flex items-center  z-10 justify-center md:absolute md:top-0 md:left-0">
+      <div className="w-full   flex flex-grow items-center  z-10 justify-center overflow-hidden">
         <ChatUi username={User[0]?.username} />
       </div>
     </main>
