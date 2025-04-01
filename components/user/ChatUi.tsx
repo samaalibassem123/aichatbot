@@ -26,7 +26,7 @@ export default function ChatUi({
   }, [messages]);
   return (
     <div className=" h-full w-full inset-shadow-2xs shadow-md rounded-md p-2 overflow-hidden">
-      <ScrollArea className="h-[90%] flex-grow">
+      <ScrollArea className="h-[90%] flex-grow ">
         {messages.map((message) => (
           <div key={message.id} className="flex gap-2 items-end mb-2.5">
             {message.role === "user" ? (
@@ -61,7 +61,7 @@ export default function ChatUi({
 
       <form
         onSubmit={handleSubmit}
-        className="flex items-center gap-2 p-2 sticky bottom-0 backdrop-blur-md "
+        className="flex items-center gap-2 p-2 sticky bottom-0 backdrop-blur-sm "
       >
         <Input name="prompt" value={input} onChange={handleInputChange} />
         <Button type="submit" disabled={status === "submitted" ? true : false}>
