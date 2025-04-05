@@ -24,6 +24,7 @@ export default function ChatUi({
 
   useEffect(() => {
     ScrollBottom();
+    console.log(messages)
   }, [messages]);
   return (
     <div className=" h-full w-full inset-shadow-2xs shadow-md rounded-md p-2 overflow-hidden">
