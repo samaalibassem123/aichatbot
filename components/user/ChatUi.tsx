@@ -9,11 +9,16 @@ import { AvatarIcon } from "./AvatarIcon";
 
 import { ClipLoader } from "react-spinners";
 import SaveCon from "./SaveCon";
+import { addMessages } from "@/utils/message";
+import { UserSchema } from "@/utils/types";
+import { User } from "@supabase/supabase-js";
 
 export default function ChatUi({
+  user,
   username,
 }: {
-  username: string | null | undefined;
+  user: User;
+  username: string;
 }) {
   const { messages, input, handleInputChange, handleSubmit, status } =
     useChat();
@@ -24,8 +29,13 @@ export default function ChatUi({
 
   useEffect(() => {
     ScrollBottom();
-    console.log(messages)
   }, [messages]);
+
+  useEffect(() => {
+    if (status === "ready") {
+      addMessages(user.id, messages);
+    }
+  }, [status]);
   return (
     <div className=" h-full w-full inset-shadow-2xs shadow-md rounded-md p-2 overflow-hidden">
       <ScrollArea className="h-[90%] flex-grow ">

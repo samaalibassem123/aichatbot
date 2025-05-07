@@ -15,3 +15,13 @@ export type FieldType = {
     email:string|null|undefined|any;
     user_auth_id:string|null|undefined|any;
   }
+
+
+  export interface Message{
+    id?:Int8Array|null|undefined | any;
+    created_at?:Date|null|undefined | any;
+    user_id?:string|null|undefined|any;
+    content?:string|null|undefined|any;
+    role?:string|null|undefined|any;
+    meesage_id?:string|null|undefined|any;
+}
