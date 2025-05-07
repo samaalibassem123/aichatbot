@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+🗣️ Tunisian Arabic Chatbot with Next.js, Supabase & Vercel AI SDK
+A chatbot that speaks Tunisian Arabic 🇹🇳, built using Next.js, Supabase Authentication, and the new Vercel AI SDK.
 
-## Getting Started
+🚀 Features
+🧠 AI chatbot using Vercel's AI SDK (supports LLMs like OpenAI)
 
-First, run the development server:
+🔐 User authentication with Supabase Auth
 
-```bash
+🗣️ Replies in Tunisian dialect
+
+🌐 Built with Next.js & React
+
+📸 Preview
+Add a screenshot or screen recording here if possible.
+
+🛠️ Tech Stack
+Next.js
+
+Supabase
+
+Vercel AI SDK
+
+OpenAI (or other LLM provider)
+
+📦 Getting Started
+bash
+Copier
+Modifier
+git clone https://github.com/yourusername/tunisian-chatbot.git
+cd tunisian-chatbot
+npm install
+1. Set up environment variables
+Create a .env.local file:
+
+ini
+Copier
+Modifier
+NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+OPENAI_API_KEY=your-openai-api-key
+2. Run the development server
+bash
+Copier
+Modifier
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+👀 Live Demo
+If you deployed it, add the link here (e.g., Vercel).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📚 Learn More
+Vercel AI SDK Docs
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Supabase Auth Docs
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Next.js Docs
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
