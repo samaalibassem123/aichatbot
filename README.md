@@ -1,55 +1,42 @@
-🗣️ Tunisian Arabic Chatbot with Next.js, Supabase & Vercel AI SDK
-A chatbot that speaks Tunisian Arabic 🇹🇳, built using Next.js, Supabase Authentication, and the new Vercel AI SDK.
+# 🗣️ Tunisian Arabic Chatbot 🇹🇳
 
-🚀 Features
-🧠 AI chatbot using Vercel's AI SDK (supports LLMs like OpenAI)
+A simple AI-powered chatbot that replies in **Tunisian Arabic dialect**, built with:
 
-🔐 User authentication with Supabase Auth
+- **Next.js** (frontend & serverless backend)
+- **Supabase Auth** (for user authentication)
+- **Vercel AI SDK** (for connecting to LLMs like OpenAI)
 
-🗣️ Replies in Tunisian dialect
+---
 
-🌐 Built with Next.js & React
+## ✨ Features
 
-📸 Preview
-Add a screenshot or screen recording here if possible.
+- 🧠 AI chatbot that understands and speaks Tunisian Arabic
+- 🔐 Supabase user authentication (login/signup)
+- ⚡ Built with the latest **Vercel AI SDK**
+- 🌐 Deployable on **Vercel**
 
-🛠️ Tech Stack
-Next.js
+---
 
-Supabase
+## 📸 Preview
 
-Vercel AI SDK
+_Add a screenshot or screen recording here if you have one._
 
-OpenAI (or other LLM provider)
+---
 
-📦 Getting Started
-bash
-Copier
-Modifier
+## 🛠 Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [Supabase](https://supabase.com/)
+- [Vercel AI SDK](https://vercel.com/blog/vercel-ai-sdk)
+- [OpenAI API](https://openai.com/)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repo
+
+```bash
 git clone https://github.com/yourusername/tunisian-chatbot.git
 cd tunisian-chatbot
 npm install
-1. Set up environment variables
-Create a .env.local file:
-
-ini
-Copier
-Modifier
-NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
-OPENAI_API_KEY=your-openai-api-key
-2. Run the development server
-bash
-Copier
-Modifier
-npm run dev
-👀 Live Demo
-If you deployed it, add the link here (e.g., Vercel).
-
-📚 Learn More
-Vercel AI SDK Docs
-
-Supabase Auth Docs
-
-Next.js Docs
-
