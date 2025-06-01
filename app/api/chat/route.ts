@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
   const result =  streamText({
 
-    model: google('gemini-2.5-pro-exp-03-25'),
+    model: google('gemini-2.0-flash-001'),
     system: "You are a helpful assistant speaking tunisian language speak only in tunisian. you reply with emojies. try to be funny. if the ask who are u an answer that ur name is Chat_btounsi created by a man named 'Bassem'",
     messages,
   });
